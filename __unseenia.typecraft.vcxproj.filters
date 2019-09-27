@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="resources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="typecraft">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="typecraft\seams">
+      <UniqueIdentifier>{5d45f3f8-9500-44e5-b6f7-af91f93df2d4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="block.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="chunk.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="chunkrow.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="craftingtable.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="entity.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="game.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="globalonfig.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="inventory.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="item.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="itemgroup.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="main.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="mob.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="module.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="orld.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="readme.md">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="recipe.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="server.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="spawn.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="_debug.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="_library.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="_release.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="_undef.inl">
+      <Filter>typecraft</Filter>
+    </None>
+    <None Include="_impl.inl">
+      <Filter>typecraft</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="chunk.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="chunkrow.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="craftingtable.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="enchantment.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="entity.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="itemgroup.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="mob.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="recipe.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="spawn.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="a.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="block.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="module_tree.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+    <ClInclude Include="seams\00_foo.h">
+      <Filter>typecraft\seams</Filter>
+    </ClInclude>
+    <ClInclude Include="seams\01_bar.h">
+      <Filter>typecraft\seams</Filter>
+    </ClInclude>
+    <ClInclude Include="_config.h">
+      <Filter>typecraft</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="_typecraft.cpp">
+      <Filter>typecraft</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
