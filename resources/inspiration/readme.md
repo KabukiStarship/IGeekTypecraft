@@ -1,1 +1,3 @@
-These are third-party images I of open-source software. They are not Typecraft.
+# unseenia.typecraft.resources.inspiration
+
+These are third-party images of open-source software. They are not Typecraft.
