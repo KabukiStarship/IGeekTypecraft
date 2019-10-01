@@ -22,6 +22,7 @@
     <None Include="block.inl" />
     <None Include="chunk.inl" />
     <None Include="chunkrow.inl" />
+    <None Include="config.imul" />
     <None Include="craftingtable.inl" />
     <None Include="entity.inl" />
     <None Include="game.inl" />
@@ -32,16 +33,28 @@
     <None Include="main.inl" />
     <None Include="mob.inl" />
     <None Include="module.inl" />
-    <None Include="orld.inl" />
     <None Include="readme.md" />
     <None Include="recipe.inl" />
     <None Include="server.inl" />
     <None Include="spawn.inl" />
-    <None Include="_impl.inl" />
+    <None Include="world.inl" />
     <None Include="_debug.inl" />
+    <None Include="_impl.inl" />
     <None Include="_library.inl" />
     <None Include="_release.inl" />
+    <None Include="_seams\00.core.inl" />
+    <None Include="_seams\readme.md" />
+    <None Include="_seams\release.inl" />
+    <None Include="_seams\_debug.inl" />
+    <None Include="_seams\_release.inl" />
+    <None Include="_seams\_undef.inl" />
     <None Include="_undef.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="_main.cpp" />
+    <ClCompile Include="_seams\main.cpp" />
+    <ClCompile Include="_typecraft.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="a.h" />
@@ -57,16 +70,11 @@
     <ClInclude Include="itemgroup.h" />
     <ClInclude Include="mob.h" />
     <ClInclude Include="recipe.h" />
-    <ClInclude Include="seams\00_foo.h" />
-    <ClInclude Include="seams\01_bar.h" />
     <ClInclude Include="server.h" />
     <ClInclude Include="spawn.h" />
-    <ClInclude Include="module_tree.h" />
     <ClInclude Include="world.h" />
     <ClInclude Include="_config.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="_typecraft.cpp" />
+    <ClInclude Include="_seams\_config.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

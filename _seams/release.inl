@@ -1,33 +1,32 @@
 /* Unseenia: Typecraft @version 0.x
 @link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /chunk_row.inl
+@file    /_seams/release.inl
 @author  Cale McCollough <https://cale-mccollough.github.io>
 @license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
 reserved (R). This Source Code Form is subject to the terms of the Mozilla 
 Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
 You can obtain one at <https://mozilla.org/MPL/2.0/>. */
 
-#ifndef TYPECRAFT_CHUNKROW_H
-#define TYPECRAFT_CHUNKROW_H
+#pragma once
+#include <_config.h>
 
-#include "chunkrow.h"
+#if SEAM == ASTARTUP_COOKBOOK_RELEASE
+#include "_debug.inl"
+#else
+#include "_release.inl"
+#endif
 
-namespace typecraft {
+using namespace _;
 
-ChunkRow::ChunkRow (SI4 max_size) {
+namespace astartup { namespace cookbook { 
+inline const CH1* Release (CH1* seam_log, CH1* seam_end, const CH1* args) {
+#if SEAM >= ASTARTUP_COOKBOOK_RELEASE
+  TEST_BEGIN;
+
+  PRINT_HEADING ("Testing Foo fun.");
+
+#endif
+  return 0;
 }
-
-SI4 ChunkRow::GetCount() {
-}
-
-SI4 ChunkRow::AddChunk(Chunk* chunk) {
-}
-
-Chunk* ChunkRow::GetChunk(SI4 index) {
-}
-
-void ChunkRow::Print() {
-}
-
-}  // namespace typecraft
-#endif  //< TYPECRAFT_CHUNKROW_H
+}  //< namespace cookbook
+}  //< namespace astartup
