@@ -1,57 +1,53 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /chunk.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Chunk.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
-
-#ifndef TYPECRAFT_CHUNK_H
-#define TYPECRAFT_CHUNK_H
-
-#include "block.h"
-#include "entity.h"
-
-namespace typecraft {
+#include <_Config.h>
+#ifndef TYPECRAFT_CHUNK_DECL
+#define TYPECRAFT_CHUNK_DECL
+#include "Block.h"
+#include "Entity.h"
+namespace Typecraft {
 
 class Chunk {
  public:
   enum {
-    kSize = 16,     //< The width and height of a Chunk in Block(s).
-    kHeight = 256,  //< The height of a Chunk in Block(s).
+    cSize = 16,     //< The width and height of a Chunk in Block(s).
+    cHeight = 512,  //< The height of a Chunk in Block(s).
   };
 
   /* A chunk of Clocks. */
   Chunk();
 
   /* Gets the X coordinate. */
-  inline SI4 GetX();
+  inline ISC GetX();
 
   /* Gets the Y coordinate. */
-  inline SI4 GetY();
+  inline ISC GetY();
 
   /* Gets the Y coordinate. */
-  inline SI4 GetZ();
+  inline ISC GetZ();
 
   /* Gets inventory count. */
-  inline Block* GetBlock(SI4 x_, SI4 y_, SI4 z_);
+  inline Block* GetBlock(ISC x, ISC y, ISC z);
 
   /* Adds set's the block at the given index. */
-  inline BOL SetBlock(Block* block, SI4 const x, SI4 y, SI4 z);
+  inline BOL SetBlock(Block* block, ISC const x, ISC y, ISC z);
 
  private:
-  SI4 x_,                 //< The farthest x position to the left.
-      y_,                 //< The farthest y position to the fight.
-      z_;                 //< The lowest z value.
-  ArX<Item*> items_;      //< The Item(s) in the Chunk.
-  ArX<Entity*> entities;  //< The Entity(s) in the Chunk.
-  Block* blocks_[kSize][kSize][kHeight];
+  ISC x_,                    //< The farthest x position to the left.
+      y_,                    //< The farthest y position to the fight.
+      z_;                    //< The lowest z value.
+  AArray<Item*> items_;      //< The Item(s) in the Chunk.
+  AArray<Entity*> entities;  //< The Entity(s) in the Chunk.
+  Block* blocks_[cSize][cSize][cHeight];
   //< The Block(s) in the Chunk.
 };
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_CHUNK_H
+}  // namespace Typecraft
+#endif

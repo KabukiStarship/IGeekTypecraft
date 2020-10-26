@@ -1,50 +1,28 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /inventory.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /ItemGroup.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
+#include "ItemGroup.h"
+namespace Typecraft {
 
-#include <_module_config.h>
-#include "itemgroup.h"
+ItemGroup::ItemGroup(ISC max_size) {}
 
-namespace typecraft {
+ItemGroup::~ItemGroup() {}
 
-class ItemGroup {
- public:
-  /* Constructs an ItemGroup with the given max_size. */
-  ItemGroup(SI4 max_size);
+ISC ItemGroup::GetCount() { return 0; }
 
-  /* Destructor */
-  ~ItemGroup();
+ISC ItemGroup::GetSize() { return 0; }
 
-  /* Gets the inventory count. */
-  SI4 GetCount();
+Item* ItemGroup::GetItem(ISC index) { return items[index]; }
 
-  /* Gets the max size of the Inventory. */
-  SI4 GetSize();
+ISC ItemGroup::AddItem(Item* item) { return 0; }
 
-  /* Gets the Item at the given index. */
-  Item* GetItem(SI4 index);
+Item* ItemGroup::RemoveItem(ISC index) { return nullptr; }
 
-  /* Adds the Item at the given index.
-  @param  item Th Item to add.
-  @return Returns -1 if the Inventory is full. */
-  SI4 AddItem(Item* item);
+void Print() {}
 
-  /* Removes the Item at the given index.
-  @param  The index of the Item to remove.
-  @return Returns nullptr if the Index is out of bounds. */
-  Item* RemoveItem(SI4 index);
-
-  /* Prints the ItemGroup to the console. */
-  void Print();
-
- private:
-  _::ArX<Item*> items_;  //< An array of Inventory Items.
-};
-
-}  // namespace typecraft
-#endif  //< TYPECRAFT_ITEMGROUP_H
+}  // namespace Typecraft

@@ -1,24 +1,22 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /server.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Server.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
-#ifndef INCLUDED_TYPECRAFT_SERVER
-#define INCLUDED_TYPECRAFT_SERVER 1
+#include <_Config.h>
+#ifndef INCLUDED_TYPECRAFT_SERVER_DECL
+#define INCLUDED_TYPECRAFT_SERVER_DECL
+#include "Block.h"
+#include "Entity.h"
 
-#include "block.h"
-#include "entity.h"
+namespace Typecraft {
 
-namespace typecraft {
-
-// @cite: Comments stolen from
-// https://minecraft.gamepedia.com/Server.properties. @todo Rewrite me!
+// @cite: Comments are being learned and re-written from this source:
+// https://minecraft.gamepedia.com/Server.properties.
 
 class Server {
  public:
@@ -49,7 +47,7 @@ class Server {
   /*(0-3) 1 Defines the difficulty (such as damage dealt by mobs and the way
      hunger and poison affects players) of the server. 0 - Peaceful 1 - Easy 2 -
      Normal 3 - Hard */
-  SI4 difficulty;
+  ISC difficulty;
 
   /* integer (0-3) 0 Defines the mode of gameplay.
       Default: 0
@@ -57,11 +55,11 @@ class Server {
       1 - Creative
       2 - Adventure
       3 - Spectator */
-  SI4 game_mode;
+  ISC game_mode;
 
   /* The maximum height in which building is allowed.
   Terrain may still naturally generate above a low height limit. */
-  SI4 max_build_height;
+  ISC max_build_height;
 
   /* The maximum number of players that can play on the server at the same
      time. Note that if more players are on the server it will use more
@@ -69,7 +67,7 @@ class Server {
      against the max players, but ops currently cannot join a full server.
      Extremely large values for this field result in the client-side user list
      being broken. Range  : 0-2147483647 Default: 20 */
-  SI4 max_players;
+  ISC max_players;
 
   /* integer (0–(2^63 - 1)) 60000 The maximum number of milliseconds a single
      tick may take before the server watchdog stops the server with the message,
@@ -78,7 +76,7 @@ class Server {
      met, it calls System.exit(1).
       -1 - disable watchdog entirely (this disable option was added in 14w32a)
    */
-  SI4 max_tick_time;
+  ISC max_tick_time;
 
   /* integer (1-29999984) 29999984 This sets the maximum possible size in
      blocks, expressed as a radius, that the world border can obtain. Setting
@@ -90,7 +88,7 @@ class Server {
       Setting max-world-size to 1000 will allow you to have a 2000x2000 world
      border. Setting max-world-size to 4000 will give you an 8000 x 8000 world
      border. */
-  SI4 max_world_size;
+  ISC max_world_size;
 
   /* By default it allows packets that are n-1 bytes big to go normally, but a
      packet that n bytes or more will be compressed down. So, lower number means
@@ -100,7 +98,7 @@ class Server {
      requires that packets less than 64 bytes become padded to 64 bytes. Thus,
      setting a value lower than 64 may not be beneficial. It is also not
      recommended to exceed the MTU, typically 1500 bytes. */
-  SI4 network_compression_threshold;
+  ISC network_compression_threshold;
 
   /* integer (1-4) 4 Sets the default permission level for ops when using /op.
      All levels inherit abilities and commands from levels before them. 1 - Ops
@@ -112,12 +110,12 @@ class Server {
      manage players (/ban, /op, etc). 4 - Ops can use all commands including
      /stop, /save-all, /save-on, /save-off, and /reload. */
 
-  SI4 op_permission_level;
+  ISC op_permission_level;
 
   /* integer (1-65534) 25565 Changes the port the server is hosting (listening)
    * on. This port must be forwarded if the server is hosted in a network using
    * NAT (If you have a home router/firewall). */
-  SI4 server_port;
+  ISC server_port;
 
   /* Determines the radius of the spawn protection as (x*2)+1.
       Setting this to 0 will not disable spawn protection. 0 will protect the
@@ -126,25 +124,25 @@ class Server {
      not generated on the first server start and appears when the first player
      joins. If there are no ops set on the server, the spawn protection will be
      disabled automatically. Default: 16 */
-  SI4 spawn_protection;
+  ISC spawn_protection;
 
   /* Sets the amount of world data the server sends the client, measured in
      chunks in each direction of the player (radius, not diameter). It
      determines the server-side viewing distance. (see Render distance) 10 is
      the default/recommended. If you have major lag, reduce this value. Range  :
      2-32 Default: 10    */
-  SI4 view_distance;
+  ISC view_distance;
 
   /* The max numbers of players that can play on the server at the same time.
   Note that if more players are on the server it will use more resources. Note
   also, admin connections are not counted against the max players.
   Range: 0-256 */
-  SI4 max_players;
+  ISC max_players;
 
   /* integer (1-3)  The max number of connections the server will accept from
   the same IP.
   Note: If you try to set it higher than 3 it will be changed back to 3. */
-  SI4 max_connections;
+  ISC max_connections;
 
   /*  integer 0 If non-zero, players are kicked from the server if they are
      idle for more than that many minutes. Note: Idle time is reset when the
@@ -158,7 +156,7 @@ class Server {
       Client Status
       Chat Message
       Use Entity */
-  SI4 player_idle_timeout;
+  ISC player_idle_timeout;
 
   BOL enable_command_block, /* boolean false Enables command blocks. */
       /* boolean false Force players to join in the default game mode.
@@ -181,19 +179,19 @@ class Server {
       See Superflat and Customized for possible settings and examples. hardcore
      boolean false If set to true, players will be set to spectator mode if they
      die. */
-  const CH1* generator_settings;
+  const CHA* generator_settings;
 
   /*  The "level-name" value will be used as the world name and its folder
      name. You may also copy your saved game folder here, and change the name to
      the same as that folder's to load it instead. Characters such as '
      (apostrophe) may need to be escaped by adding a backslash before them.
       Default: world */
-  const CH1* level_name;
+  const CHA* level_name;
 
   /* Add a seed for your world, as in Singleplayer.
       Some examples are: minecraft, 404, 1a2b3c.
       Default: blank */
-  const CH1* level_seed;
+  const CHA* level_seed;
 
   /* string DEFAULT Determines the type of map that is generated.
       DEFAULT - Standard world with hills, valleys, water, etc.
@@ -203,7 +201,7 @@ class Server {
      increased.
       CUSTOMIZED - Same as default unless generator-settings is set to a preset.
    */
-  const CH1* level_type;
+  const CHA* level_type;
 
   /* string A Minecraft Server This is the message that is displayed in the
      server list of the client, below the name. The MOTD does support color and
@@ -211,21 +209,21 @@ class Server {
      However, such characters must be converted to escaped Unicode form. An
      online converter can be found here If the MOTD is over 59 characters, the
      server list will likely report a communication error. */
-  const CH1* motd;
+  const CHA* motd;
 
   /* integer (1-65534) 25565 Sets the port for the query server (see
    * enable-query). */
-  const CH1* query_port;
+  const CHA* query_port;
 
   /* Sets the password to rcon.
       Default: blank    */
-  const CH1* rcon_password;
+  const CHA* rcon_password;
 
   /* Sets the port to rcon.
       Range   : 1-65534
       Default : 25575
   */
-  const CH1* rcon_port;
+  const CHA* rcon_port;
 
   /* string DEFAULT Determines the type of map that is generated.
       DEFAULT - Standard world with hills, valleys, water, etc.
@@ -238,9 +236,9 @@ class Server {
 
   /* string blank Optional URI to a resource pack. The player may choose to use
    * it. */
-  const CH1* resource_pack;
+  const CHA* resource_pack;
 
-  const CH1
+  const CHA
       *resource_pack_sha1, /* string blank Optional SHA-1 digest of the resource
                               pack, in lowercase hexadecimal. It's recommended
                               to specify this. This is not yet used to verify
@@ -250,19 +248,19 @@ class Server {
       /* Set this if you want the server to bind to a particular IP.
           It is strongly recommended that you leave server-ip blank!
           Set to blank, or the IP you want your server to run (listen) on. */
-      const CH1 *server_ip;
+      const CHA *server_ip;
 
-  const CH1* server_name; /* string  The name of the server. This is displayed
+  const CHA* server_name; /* string  The name of the server. This is displayed
       in the server list and when someone is joining the server
       A single line of text. Characters such as ' (apostrophe) may need to be
       escaped by adding a backslash before them. */
 
   /* string  MOTD is short for Message of the day, though you do not need to
    * change it every day. The MOTD is displayed when people join the server.*/
-  const CH1* motd;
+  const CHA* motd;
 
  private:
 };
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_SERVER_H
+}  // namespace Typecraft
+#endif

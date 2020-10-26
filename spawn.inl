@@ -1,18 +1,16 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /block.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Spawn.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
+#pragma once
 #ifndef TYPECRAFT_SPAWN_H
 #define TYPECRAFT_SPAWN_H
-
-#include "item.h"
-
-namespace typecraft {
+#include "Item.h"
+namespace Typecraft {
 
 /* Each individual spawn attempt succeeds only if all of the following
 conditions are met:
@@ -63,13 +61,13 @@ there is an 80% chance of spawning a wither skeleton instead
 
 */
 
-Spawn::Spawn(const CH1* name);
+Spawn::Spawn(const CHA* name);
 
-SI4 Spawn::GetType() {}
+ISC Spawn::GetType() {}
 
 /* Sets the type. */
-const CH1* Spawn::Setype(SI4 type) {}
+const CHA* Spawn::Setype(ISC type) {}
 
 void Spawn::Mine() {}
-}  // namespace typecraft
-#endif  //< TYPECRAFT_SPAWN_H
+}  // namespace Typecraft
+#endif

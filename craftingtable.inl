@@ -1,16 +1,14 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /craftingtable.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
-#include "craftingtable.h"
-
-namespace typecraft {
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /CraftingTable.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
+#include "CraftingTable.h"
+namespace Typecraft {
 
 CraftingTable::CraftingTable() {}
 
-}  // namespace typecraft
+}  // namespace Typecraft

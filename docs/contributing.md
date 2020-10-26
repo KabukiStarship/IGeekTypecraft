@@ -16,7 +16,7 @@
 
 ```Console
 git clone https://github.com/abc_org/xyz_project.git
-cd script2
+cd Script2™
 git checkout -b Issue123
 ```
 
@@ -40,3 +40,9 @@ git add --all
 git commit "module_id:Fix feature ABC. #125"
 git branch -d Issue123
 ```
+
+## License
+
+Copyright 2015-20 © [Kabuki Starship](https://kabukistarship.com).
+
+This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at <https://mozilla.org/MPL/2.0/>.

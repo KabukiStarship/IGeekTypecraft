@@ -1,23 +1,18 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /item.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Item.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
-#ifndef TYPECRAFT_ITEM_H
-#define TYPECRAFT_ITEM_H
-
-#include "onfig.h"
-
-namespace typecraft {
-
+#include <_Config.h>
+#ifndef TYPECRAFT_ITEM_DECL
+#define TYPECRAFT_ITEM_DECL
+namespace Typecraft {
 enum {
-  kTypecraftNumBlocks = 452,
+  cTypecraftNumBlocks = 452,
 };
 
 class Item {
@@ -361,8 +356,8 @@ class Item {
     Paper,
     Book,
     Slimeball,
-    MinecartwithChest,
-    MinecartwithFurnace,
+    MinecartWithChest,
+    MinecartWithFurnace,
     Egg,
     Compass,
     FishingRod,
@@ -400,10 +395,10 @@ class Item {
     MagmaCream,
     BrewingStand,
     Cauldron,
-    EyeofEnder,
+    EyeOfEnder,
     GlisteringMelon,
     Spawn,
-    BottleoEnchanting,
+    BottleOEnchanting,
     FireCharge,
     BookandQuill,
     WrittenBook,
@@ -485,42 +480,42 @@ class Item {
     NUM_ITEMS,
   } Types;
 
-  static const CH1* names[];
+  static const CHA* names[];
 
   /* Default constructs an initialized Item. */
   Item();
 
   /* Gets the type. */
-  SI4 GetType();
+  ISC GetType();
 
   /* Gets the Item Variant. */
-  SI4 GetVariant();
+  ISC GetVariant();
 
   /* Gets the condition of the Item. */
-  SI4 GetCondition();
+  ISC GetCondition();
 
   /* Sets the condition of the Item. */
-  SI4 SetContition(SI4 condition);
+  ISC SetContition(ISC condition);
 
   /* Gets the Item's Label */
-  const CH1* Label();
+  const CHA* Label();
 
   /* Attempts to set the label POINTER to the new one.
-      @return Returns the */
-  const CH1* SetLabel(const CH1* label);
+  @return Returns the */
+  const CHA* SetLabel(const CHA* label);
 
   /* Attempts to set the label to a clone of the new one.
-      @return Returns null upon success and a pointer to an error string upon
-     failure. */
-  const CH1* CloneLabel(const CH1* label);
+  @return Returns null upon success and a pointer to an error string upon
+  failure. */
+  const CHA* CloneLabel(const CHA* label);
 
   /* Prints the Item to the console. */
-  void Print(_::Log& log);
+  void Print();
 
  private:
-  const CH1 *label_,  //< Proper English Item's label.
+  const CHA *label_,   //< Proper English Item's label.
       *name_;          //< Name of the Item.
-  SI4 type_,           //< The type of Item.
+  ISC type_,           //< The type of Item.
       variant_,        //< Variant type of Item.
       condition_,      //< Condition of the Item.
       hunger_,         //< Hunger points you get from this.
@@ -529,7 +524,7 @@ class Item {
 };
 
 /* Gets an Item name. */
-Item* Items(SI4 item_number);
+Item* Items(ISC item_number);
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_ITEM_H
+}  // namespace Typecraft
+#endif

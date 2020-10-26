@@ -1,21 +1,20 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /game.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Game.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
-#ifndef TYPECRAFT_GAME_H
-#define TYPECRAFT_GAME_H
+#include <_Config.h>
+#ifndef TYPECRAFT_GAME_DECL
+#define TYPECRAFT_GAME_DECL
 
-#include "entity.h"
-#include "world.h"
+#include "Entity.h"
+#include "World.h"
 
-namespace typecraft {
+namespace Typecraft {
 
 class Game {
  public:
@@ -23,7 +22,7 @@ class Game {
   Game();
 
  private:
-  SI4 x_,  //< The screen x coordinate.
+  ISC x_,  //< The screen x coordinate.
       y_,  //< The screen y coordinate.
       z_;  //< The screen z coordinate.
 
@@ -31,5 +30,5 @@ class Game {
   World* world_;    //< The current world.
 };
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_GAME_H
+}  // namespace Typecraft
+#endif

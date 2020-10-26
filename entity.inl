@@ -1,82 +1,82 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /inventory.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Entity.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
+#pragma once
+#ifndef TYPECRAFT_PLAYER_DECL
+#define TYPECRAFT_PLAYER_DECL
 
-#ifndef TYPECRAFT_PLAYER_H
-#define TYPECRAFT_PLAYER_H
+#include "Entity.h"
 
-#include "entity.h"
-
-namespace typecraft {
+namespace Typecraft {
 
 class Entity {
- public:
-  Entity(const CH1* name = "Steve");
+  public:
+  Entity(const CHA* name = "Steve");
 
   /* Gets the X coordinate. */
-  inline SI4 GetX();
+  inline ISC GetX();
 
   /* Sets the X Value. */
-  inline void SetX(SI4 value);
+  inline void SetX(ISC value);
 
   /* Gets the Y coordinate. */
-  inline SI4 GetY();
+  inline ISC GetY();
 
   /* Sets the X Value. */
-  inline void SetY(SI4 value);
+  inline void SetY(ISC value);
 
   /* Gets the Y coordinate. */
-  inline SI4 GetZ();
+  inline ISC GetZ();
 
   /* Sets the X Value. */
-  inline void SetZ(SI4 value);
+  inline void SetZ(ISC value);
 
   /* Gets the max number of blocks an Entity can reach to manipulate. */
-  SI4 GetReach();
+  ISC GetReach();
 
   /* Sets the max number of blocks an Entity can reach to manipulate.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetReach(SI4 value);
+  ISC SetReach(ISC value);
 
   /* Gets the Entity's health. */
-  SI4 GetHealth();
+  ISC GetHealth();
 
   /* Sets the Entity's health.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetHealth(SI4 value);
+  ISC SetHealth(ISC value);
 
   /* Gets the Entity's max health. */
-  SI4 GetMaxHealth();
+  ISC GetMaxHealth();
 
   /* Sets the max number of blocks an Entity can reach to manipulate.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetMaxHealth(SI4 value);
+  ISC SetMaxHealth(ISC value);
 
   /* Gets the Entity's armor rating. */
-  SI4 GetArmor();
+  ISC GetArmor();
 
   /* Sets the Entity's armor rating.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetArmor(SI4 value);
+  ISC SetArmor(ISC value);
 
   /* Gets the Entity's height measured in half blocks. */
-  SI4 Height();
+  ISC Height();
 
   /* Sets the Entity's height in half blocks.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetHeight(SI4 value);
+  ISC SetHeight(ISC value);
 
   /* Gets the Entity's hunger rating. */
-  SI4 GetHunger();
+  ISC GetHunger();
 
   /* Sets the Entity's hunger rating.
       @return Returns zero upon success and the input value if it is < 0 . */
-  SI4 SetHunger(SI4 value);
+  ISC SetHunger(ISC value);
 
   /* Print's the Entity to the console. */
   void Print();
@@ -88,7 +88,7 @@ class Entity {
   virtual void Print();
 
  private:
-  SI4 x_,                //< The Entity's x position.
+  ISC x_,                //< The Entity's x position.
       y_,                //< The Entity's y position.
       z_,                //< The Entity's z position.
       reach_,            //< How far the Entity can reach to Mine/Attack/etc.
@@ -101,5 +101,5 @@ class Entity {
   Inventory inventory_;  //< An Entity's Inventory.
 };
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_PLAYER_H
+}  // namespace Typecraft
+#endif
