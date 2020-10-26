@@ -1,24 +1,24 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /mob.inl
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Mob.inl
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 
-#include <_module_config.h>
+#include <_Config.h>
 
-#include "mob.h"
+#include "Mob.h"
 
-namespace typecraft {
+namespace Typecraft {
 
 class Mob : public Entity {
  public:
-  Mob(const CH1* name, );
+  Mob(const CHA* name);
 
   /* Constructs an Mob with the given max_size. */
-  Mob(SI4 max_size);
+  Mob(ISC max_size);
 
   /* Destructor */
   ~Mob();
@@ -354,7 +354,7 @@ class Mule {
 };
 
 /* A Cat.
-    Domesticated Ocelot*/
+Domesticated Ocelot*/
 class Cat {
  public:
   /* Constructs a new Cat. */
@@ -362,7 +362,7 @@ class Cat {
 };
 
 /* A Dog.
-    Domesticated Wolf. */
+Domesticated Wolf. */
 class Dog {
  public:
   /* Constructs a new Dog. */
@@ -383,5 +383,5 @@ class Parrot {
   Parrot();
 };
 
-}  // namespace typecraft
-#endif  //< TYPECRAFT_MOB_H
+}  // namespace Typecraft
+#endif

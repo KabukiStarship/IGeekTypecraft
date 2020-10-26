@@ -1,28 +1,23 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /a.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /A.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
+#include <_Config.h>
+#ifndef TYPECRAFT_A_DECL
+#define TYPECRAFT_A_DECL
+#include <Script2/Room.hpp>
+namespace Typecraft {
 
-#ifndef INCLUDED_TYPECRAFT_A
-#define INCLUDED_TYPECRAFT_A 1
-
-#include <script2/room.hpp>
-
-namespace typecraft {
-
-/* The A in A*B.
- */
+/* The A in A*B. */
 struct A : public _::Room {
  public:
   A() : A(1024) {}
 };
 
-}  // namespace typecraft
+}  // namespace Typecraft
 #endif

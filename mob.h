@@ -1,27 +1,26 @@
-/* Unseenia: Typecraft @version 0.x
-@link    https://github.com/kabuki-starship/unseenia.typecraft.git
-@file    /mob.h
-@author  Cale McCollough <https://cale-mccollough.github.io>
-@license Copyright 2015-9 (C) Kabuki Starship <kabukistarship.com>; all rights 
-reserved (R). This Source Code Form is subject to the terms of the Mozilla 
-Public License, v. 2.0. If a copy of the MPL was not distributed with this file,
-You can obtain one at <https://mozilla.org/MPL/2.0/>. */
-
+/* IGeek Typecraft @version 0.x
+@link    https://github.com/KabukiStarship/IGeekTypecraft.git
+@file    /Mob.h
+@author  Cale McCollough <https://cookingwithcale.org>
+@license Copyright 2015-20 (C) Kabuki Starship <https://kabukistarship.com>.
+This Source Code Form is subject to the terms of the Mozilla Public License, 
+v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain 
+one at <https://mozilla.org/MPL/2.0/>. */
 #pragma once
-#include <_module_config.h>
-#ifndef TYPECRAFT_MOB_H
-#define TYPECRAFT_MOB_H
-
-#include "entity.h"
-
-namespace typecraft {
+#include <_Config.h>
+#ifndef TYPECRAFT_MOB_DECL
+#define TYPECRAFT_MOB_DECL
+#include "Entity.h"
+namespace Typecraft {
 
 class Mob : public Entity {
  public:
-  Mob(const CH1* name, );
+  
+  /* Constructs a mob with the given attributes. */
+  Mob(const CHA* name);
 
   /* Constructs an Mob with the given max_size. */
-  Mob(SI4 max_size);
+  Mob(ISC max_size);
 
   /* Destructor */
   ~Mob();
@@ -386,5 +385,5 @@ class Parrot {
   Parrot();
 };
 
-}  // namespace typecraft
+}  // namespace Typecraft
 #endif
